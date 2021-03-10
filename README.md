@@ -16,11 +16,9 @@ This is a set up project for building a calculator for Math Magicians Inc using 
 
 **To get this project set up on your local machine, follow these simple steps:**
 
-1. Clone this project: git clone https://github.com/enaburekhan/Calculator.git
-2. Cd into the cloned directory called Calculator
-3. run create-react-app calculator-app
-4. Cd into calculator-app 
-5. run npm run start
+1. Clone this project: git clone https://github.com/enaburekhan/calculator-app.git
+2. Cd into the cloned directory 
+3. run npm run start
 
 ## Author Details:
 
