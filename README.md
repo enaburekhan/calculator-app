@@ -3,7 +3,7 @@ This is a set up project for building a calculator for Math Magicians Inc using 
 
  
  ## Live Demo:
-[Calulator]()
+[Calulator](http://ericenaburekhan.me/calculator-app/)
 
 ## Built-With
 
