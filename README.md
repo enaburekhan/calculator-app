@@ -18,7 +18,8 @@ This is a set up project for building a calculator for Math Magicians Inc using 
 
 1. Clone this project: git clone https://github.com/enaburekhan/calculator-app.git
 2. Cd into the cloned directory 
-3. run npm run start
+3. Run npm install
+3. Run npm run start
 
 ## Author Details:
 
