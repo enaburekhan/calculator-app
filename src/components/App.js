@@ -4,11 +4,11 @@ import ButtonPanel from './ButtonPanel';
 
 function App() {
   return (
-    <div className="App">
-      <div className="app-content">
+    <div className="Component-App">
+      <>
         <Display />
         <ButtonPanel />
-      </div>
+      </>
     </div>
   );
 }
