@@ -4,10 +4,8 @@ import ButtonPanel from './ButtonPanel';
 function App() {
   return (
     <div className="Component-App">
-      <>
-        <Display />
-        <ButtonPanel />
-      </>
+      <Display />
+      <ButtonPanel />
     </div>
   );
 }
