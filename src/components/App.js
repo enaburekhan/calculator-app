@@ -1,5 +1,6 @@
 import Display from './Display';
 import ButtonPanel from './ButtonPanel';
+import Calculate from '../logic/Calculate';
 
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <>
         <Display />
         <ButtonPanel />
+        <Calculate />
       </>
     </div>
   );
