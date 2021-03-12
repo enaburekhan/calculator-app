@@ -1,7 +1,9 @@
+import Operate from './Operate';
+
 const Calculate = ({ data, buttonName }) => {
 
   const isNumber = (item) => !!item.match(/[0-9]+/);  
-    
+
     if(buttonName===AC) {
       return {
         total: null,
