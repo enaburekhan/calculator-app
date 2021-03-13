@@ -1,8 +1,8 @@
-import Operate from './Operate';
+import operate from './operate';
 
-const Calculate = ({ data, buttonName }) => {
-  const isNumber = item => !!item.match(/[0-9]+/);
+const isNumber = item => !!item.match(/[0-9]+/);
 
+export default function calculate(data, buttonName) {
   if (buttonName === 'AC') {
     return {
       total: null,
@@ -59,7 +59,7 @@ const Calculate = ({ data, buttonName }) => {
   if (buttonName === '=') {
     if (data.next && data.operation) {
       return {
-        total: Operate(data.total, data.next, data.operation),
+        total: operate(data.total, data.next, data.operation),
         next: null,
         operation: null,
       };
@@ -80,7 +80,7 @@ const Calculate = ({ data, buttonName }) => {
   // user click operation button
   if (data.operation) {
     return {
-      total: Operate(data.total, data.next, data.operation),
+      total: operate(data.total, data.next, data.operation),
       next: null,
       operation: buttonName,
     };
@@ -95,6 +95,4 @@ const Calculate = ({ data, buttonName }) => {
     next: null,
     operation: buttonName,
   };
-};
-
-export default Calculate;
+}
