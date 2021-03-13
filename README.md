@@ -1,5 +1,5 @@
-# PROJECT: Calculator-Milestone-2 
-This project milestone involves creating the function components for building the calculator for Math Magicians Inc. The components function include Display, Button, ButtonPanel and modifying the App function as Parent to accept Display and ButtonPanel as child elements. 
+# PROJECT: Calculator-Milestone-4 
+This project milestone involves creating the logic for building the calculator for Math Magicians Inc. The required logics were created in the calculate.js and operate.js using if/else statements in the logic directory. 
 
  
  ## Live Demo:
