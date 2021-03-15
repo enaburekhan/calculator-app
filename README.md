@@ -1,5 +1,5 @@
 # PROJECT: Calculator-Milestone-5 
-This project milestone involves creating a use state in the App function for building the calculator for Math Magicians Inc. The properties total, next, and null were initialize to a useState of 'null'. 
+This project milestone involves creating a use state in the App function for building the calculator for Math Magicians Inc. The properties total, next, and operation were initialize to a useState of 'null'. 
 
  
  ## Live Demo:
