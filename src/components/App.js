@@ -3,14 +3,6 @@ import Display from './Display';
 import ButtonPanel from './ButtonPanel';
 import calculate from '../logic/calculate';
 
-const appStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  flexWrap: 'wrap',
-  width: '700px',
-  height: '100%',
-};
-
 const App = () => {
   const [total, setTotal] = useState(null);
   const [next, setNext] = useState(null);
@@ -27,7 +19,7 @@ const App = () => {
     setOperation(objOperation);
   };
   return (
-    <div style={appStyle} className="Component-App">
+    <div className="Component-App">
       <>
         <Display value={next || total || '0'} />
         <ButtonPanel clickHandler={handleClick} />

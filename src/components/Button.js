@@ -17,7 +17,6 @@ const Button = ({ name, clickHandler }) => {
     }
   };
   return (
-
     <button type="button" onClick={handleClick} className={fetchResult(name)}>
       {name}
     </button>
