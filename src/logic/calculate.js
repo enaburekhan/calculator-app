@@ -2,95 +2,77 @@ import operate from './operate';
 
 export default function calculate(data, buttonName) {
   let { total, next, operation } = data;
-  const isNumber = item => !!item.match(/[0-9]+/);
-  if (buttonName === 'AC') {
-    total = null;
-    next = null;
-    operation = null;
-    return { total, next, operation };
-  }
-
-  if (isNumber(buttonName)) {
-    if (buttonName === '0' && data.next === '0') {
-      return {};
-    }
-    if (data.operation) {
-      if (data.next) {
-        return { next: data.next + buttonName };
+  switch (buttonName) {
+    case '0':
+    case '1':
+    case '2':
+    case '3':
+    case '4':
+    case '5':
+    case '6':
+    case '7':
+    case '8':
+    case '9':
+      if (next) {
+        next += buttonName;
+      } else {
+        next = buttonName;
       }
-      return { next: buttonName };
-    }
-
-    if (data.next) {
-      return {
-        next: data.next + buttonName,
-        total: null,
-      };
-    }
-    return {
-      next: buttonName,
-      total: null,
-    };
-  }
-
-  if (buttonName === '.') {
-    if (data.next) {
-      if (data.next.includes('.')) {
-        return {};
+      break;
+    case '+':
+    case '-':
+    case 'x':
+    case '/':
+      if (total && next) {
+        if (!operation) {
+          operation = buttonName;
+        }
+        total = operate(total, next, operation);
+      } else if (next) {
+        total = next;
       }
-      return { next: `${data.next}.` };
-    }
-
-    if (data.operation) {
-      return { next: '0.' };
-    }
-
-    if (data.total) {
-      if (data.total.includes('.')) {
-        return {};
+      operation = buttonName;
+      next = null;
+      break;
+    case '=':
+      if (!operation) {
+        break;
+      } else if (total && next) {
+        total = operate(total, next, operation);
+      } else {
+        total = next;
       }
-      return { total: `${data.total}.` };
-    }
-    return { total: '0.' };
+      operation = null;
+      next = null;
+      break;
+    case '+/-':
+      if (next) {
+        next = operate(next, '-1', 'x');
+      } else if (total) {
+        total = operate(total, '-1', 'x');
+      }
+      break;
+    case '%':
+      if (next) {
+        next = operate(next, '100', '/');
+      } else if (total) {
+        total = operate(total, '100', '/');
+      }
+      break;
+    case '.':
+      if (!next) {
+        next = '0.';
+      } else if (!next.includes('.')) {
+        next += '.';
+      }
+      break;
+    case 'AC':
+      total = null;
+      next = null;
+      operation = null;
+      break;
+    default:
+      break;
   }
-
-  if (buttonName === '=') {
-    if (data.next && data.operation) {
-      return {
-        total: operate(data.total, data.next, data.operation),
-        next: null,
-        operation: null,
-      };
-    }
-    return {};
-  }
-
-  if (buttonName === '+/-') {
-    if (data.next) {
-      return { next: (-1 * parseFloat(data.next)).toString() };
-    }
-    if (data.total) {
-      return { next: (-1 * parseFloat(data.total)).toString() };
-    }
-    return {};
-  }
-
-  // user click operation button
-  if (data.operation) {
-    return {
-      total: operate(data.total, data.next, data.operation),
-      next: null,
-      operation: buttonName,
-    };
-  }
-
-  if (!data.next) {
-    return { operation: buttonName };
-  }
-
-  return {
-    total: data.next,
-    next: null,
-    operation: buttonName,
-  };
+  return { total, next, operation };
 }
