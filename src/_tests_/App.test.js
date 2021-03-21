@@ -5,20 +5,20 @@ import App from '../components/App';
 
 test('renders correctly', () => {
   const tree = create(<App />).toJSON();
-  expect(tree).toMatchSnapshot();      
+  expect(tree).toMatchSnapshot();
 });
 
 test('displays number', () => {
   render(<App />);
   const button = screen.getByText('5');
-  expect(button).toBeInTheDocument();    
+  expect(button).toBeInTheDocument();
 });
 
 test('dispaly operators', () => {
   render(<App />);
   const button = screen.getByText(/\+$/i);
-  expect(button).toBeInTheDocument();    
-})
+  expect(button).toBeInTheDocument();
+});
 
 test('display output of calculation', () => {
   render(<App />);
@@ -27,7 +27,7 @@ test('display output of calculation', () => {
   fireEvent.click(screen.getByText('4'));
   fireEvent.click(screen.getByText('='));
   const output = screen.getByText('20');
-  expect(output).toBeInTheDocument();    
+  expect(output).toBeInTheDocument();
 });
 
 test('clears display on clicking AC button', async () => {
@@ -38,5 +38,5 @@ test('clears display on clicking AC button', async () => {
   fireEvent.click(screen.getByText('='));
   fireEvent.click(screen.getByText('AC'));
   const zeros = await screen.findAllByText('0');
-  expect(zeros).toHaveLength(2);    
-} )
+  expect(zeros).toHaveLength(2);
+});
