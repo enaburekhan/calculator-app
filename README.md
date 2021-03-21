@@ -22,13 +22,13 @@ This project involves testing the Math-Magician website using Jest, react-testin
 
 **To get this project set up on your local machine, follow these simple steps:**
 
-1. Clone this project: git clone https://github.com/enaburekhan/calculator-app.git
+1. Clone this project: git clone https://github.com/enaburekhan/calculator-app.git  
 2. Cd into the cloned directory 
 3. Run npm install
 3. Run npm run start
 
 **To Test the website**
-1. Run yarn add --dev babel-jest babel-preset-stage-0 enzyme enzyme-adapter-react-16 jest-cli react-addons-test-utils react-test-renderer redux-mock-store sinon on the root of the project.
+1. Run `yarn add --dev babel-jest babel-preset-stage-0 enzyme enzyme-adapter-react-16 jest-cli react-addons-test-utils react-test-renderer redux-mock-store sinon` on the root of the project.
 2. Write tests and run `yarn test` to check if tests are passing.
 
 ## Author Details:
